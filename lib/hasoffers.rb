@@ -1,0 +1,3 @@
+module HasOffers
+  
+end
