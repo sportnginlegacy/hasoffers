@@ -22,9 +22,9 @@ Example usage: (more examples in tests)
 
 The tests can be ran in two modes:
 
-1. Test mode:  rake test
-Does not make real API calls. Dummy responses are returned by the DummyResponse class which is also useful in development mode to avoid real API calls
-2. Live mode: env REMOTE_TEST=1 rake test
-Makes real api calls. Uses the HasOffer credentials in config/has_offers.yml which by default is set to the demo account credentials. HasOffers does not supply a test gateway so be careful to not run these tests against your live HasOffers account.
+* Test mode:  rake test
+** Does not make real API calls. Dummy responses are returned by the DummyResponse class which is also useful in development mode to avoid real API calls
+* Live mode: env REMOTE_TEST=1 rake test
+** Makes real api calls. Uses the HasOffer credentials in config/has_offers.yml which by default is set to the demo account credentials. HasOffers does not supply a test gateway so be careful to not run these tests against your live HasOffers account.
 
 The HasOffers API is huge and this gem implements only a portion of what is available with their API. With this framework in place it should be easy to extend the gem to support API calls that are not yet supported. Please send contributions as git patches.  
