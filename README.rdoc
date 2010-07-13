@@ -5,7 +5,7 @@ This gem hooks into the HasOffers API as documented here: http://www.hasoffers.c
 
 == Install
 
-gem install ngin-hasoffers --source http://gems.github.com
+gem install hasoffers
 
 
 == Usage
