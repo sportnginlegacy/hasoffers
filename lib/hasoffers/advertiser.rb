@@ -1,16 +1,17 @@
 module HasOffers
 
-  class Affiliate < Base
+  class Advertiser < Base
 
-    Target = 'Affiliate'
+    Target = 'Advertiser'
 
     class << self
 
+      def find_all(params = {})
+        get_request(Target, 'findAll', params)
+      end
+
       def create(data, return_object = false)
         requires!(data, %w[company address1 city country zipcode phone])
-        if data['country'] == 'US' or data['country'] == 'CA'
-          requires!(data, 'region')
-        end
         params = build_data(data, return_object)
         post_request(Target, 'create', params)
       end

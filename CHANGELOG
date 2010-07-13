@@ -1,3 +1,11 @@
 = HasOffers CHANGELOG
 
 == Version 0.1.0
+
+Initial framework including support for the following API calls:
+* Advertiser: find_all, create, update
+* Affiliate: create, update
+* AffiliateBilling: find_invoice_stats, find_all_invoices, create_invoice, update_invoice
+* Conversion: create, update
+* Offer: create, update
+* Report: get_stats
