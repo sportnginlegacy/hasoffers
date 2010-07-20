@@ -40,7 +40,7 @@ The tests can be ran in two modes:
 Does not make live API calls. Dummy responses are returned by the DummyResponse class which is also used in development mode to avoid live API calls.
 
 === Live mode
-* env REMOTE_TEST=1 rake test
+* env HAS_OFFERS_LIVE=1 rake test
 Makes live api calls. Uses the HasOffer credentials in config/has_offers.yml which by default is set to the demo account credentials. HasOffers does not supply a test gateway so be careful to not run these tests against your live HasOffers account.
 
 
