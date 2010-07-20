@@ -31,7 +31,7 @@ module HasOffers
         @@api_mode == :live
       end
 
-      def set_api_mode(mode)
+      def api_mode=(mode)
         @@api_mode = mode
       end
 
