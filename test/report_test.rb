@@ -10,4 +10,12 @@ class ReportTest < Test::Unit::TestCase
     assert_success response
   end
 
+  def test_get_conversions
+    response = HasOffers::Report.get_conversions(
+      'fields' => ['Stat.payout'],
+      'filters' => ['Stat.affiliate_id' => ['values' => 1, 'conditional' => 'EQUAL_TO']]
+    )
+    assert_success response
+  end
+
 end

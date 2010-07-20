@@ -70,6 +70,10 @@ module HasOffers
         {"response"=>{"data"=>{"pageCount"=>1, "data"=>[{"Stat"=>{"affiliate_id"=>"1", "clicks"=>"20645"}}], "current"=>50, "count"=>1, "page"=>1}, "errors"=>[], "status"=>1}}
       end
 
+      def response_for_report_getconversions(params)
+        {"response"=>{"data"=>{"pageCount"=>1, "data"=>[{"Stat"=>{"affiliate_id"=>"1", "payout"=>"100.00"}}], "current"=>50, "count"=>1, "page"=>1}, "errors"=>[], "status"=>1}}
+      end
+
     end
 
     attr_accessor :code, :message, :body, :headers
