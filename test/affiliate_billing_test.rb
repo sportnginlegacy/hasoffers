@@ -22,6 +22,13 @@ class AffiliateBillingTest < Test::Unit::TestCase
     assert response.data.length > 0, "No invoices were returned."
   end
 
+  def test_find_all_invoices_by_ids
+    response = HasOffers::AffiliateBilling.find_all_invoices_by_ids([7,11]
+    )
+    assert_success response
+    assert response.data.length > 0, "No invoices were returned."
+  end
+
   def good_params
     {'affiliate_id' => '1',
      'start_date' => '2010-01-01',

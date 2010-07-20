@@ -23,6 +23,19 @@ module HasOffers
         response
       end
 
+      def find_all_invoices_by_ids(ids, params = {})
+        params['ids'] = ids
+        response = get_request(Target, 'findAllInvoicesByIds', params)
+        if response.success?
+          # strip out the clutter
+          data = response.data.map do |invoice|
+            invoice[1].values.first
+          end
+          response.set_data data
+        end
+        response
+      end
+
       def create_invoice(data, return_object = false)
         requires!(data, %w[affiliate_id start_date end_date status])
         params = build_data(data, return_object)
