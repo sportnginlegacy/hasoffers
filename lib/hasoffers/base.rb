@@ -4,7 +4,7 @@ module HasOffers
   class Base
 
     BaseUri = 'https://api.hasoffers.com/Api'
-    @@api_mode = (ENV['RAILS_ENV'] == 'production' or ENV['REMOTE_TEST'] == '1') ? :live : :test
+    @@api_mode = (ENV['RAILS_ENV'] == 'production' or ENV['HAS_OFFERS_LIVE'] == '1') ? :live : :test
     @@default_params = nil
 
     class << self
