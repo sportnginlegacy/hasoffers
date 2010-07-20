@@ -26,9 +26,11 @@ When running in development mode, by default live api calls are not made. Dummy 
 
 env HAS_OFFERS_LIVE=1 script/server
 
-If you always want live api calls in development mode then you can add this line to your development.rb file:
+If you always want live api calls in development mode then you can add this line within the config.after_initialize block of your development.rb file:
 
-HasOffers::Base.api_mode = :live
+config.after_initialize do
+  HasOffers::Base.api_mode = :live
+end
 
 
 == Tests
