@@ -1,5 +1,9 @@
 = HasOffers CHANGELOG
 
+== Version 0.1.1
+* Changed REMOTE_TEST environment variable to HAS_OFFERS_LIVE
+* Added AffiliateBilling.find_all_invoices_by_ids
+
 == Version 0.1.0
 
 Initial framework including support for the following API calls:
