@@ -1,5 +1,8 @@
 = HasOffers CHANGELOG
 
+== Version 0.1.2
+* Minor bug fix for running without the has_offers.yml config file
+
 == Version 0.1.1.1
 * Minor fix to README
 

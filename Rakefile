@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('hasoffers', '0.1.1.1') do |p|
+Echoe.new('hasoffers', '0.1.2') do |p|
   p.description = "Implementation of the HasOffers API for affiliate advertising."
   p.url = "http://github.com/ngin/hasoffers"
   p.author = "Luke Ludwig"
