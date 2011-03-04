@@ -24,7 +24,8 @@ Example usage: (more examples in tests)
 
 When running in development mode, by default live api calls are not made. Dummy responses are returned from the DummyResponse class. Set the HAS_OFFERS_LIVE environment variable to "1" to make live api calls when in development mode like so:
 
-env HAS_OFFERS_LIVE=1 script/server
+Rails 2.x: env HAS_OFFERS_LIVE=1 script/server
+Rails 3.x: env HAS_OFFERS_LIVE=1 rails server
 
 If you always want live api calls in development mode then you can add this line within the config.after_initialize block of your development.rb file:
 
