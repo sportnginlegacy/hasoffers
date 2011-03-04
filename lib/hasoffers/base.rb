@@ -19,6 +19,7 @@ module HasOffers
                               'NetworkId' => config['network_id'],
                               'NetworkToken' => config['api_key']}
         else
+          @@default_params = {}
           puts "Missing config/has_offers.yml file!"
         end
       end
