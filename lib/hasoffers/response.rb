@@ -80,7 +80,7 @@ module HasOffers
     protected
 
     def paginated_response?
-      @body['response']['data'] and @body['response']['data'].is_a?(Hash) and @body['response']['data']['pageCount']
+      @body['response']['data'] and @body['response']['data'].is_a?(Hash) and @body['response']['data'].has_key?('pageCount')
     end
 
   end
