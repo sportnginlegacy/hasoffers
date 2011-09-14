@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Luke Ludwig"]
   s.email       = ["luke.ludwig@tstmedia.com"]
-  s.homepage    = "https://github.com/ngin/hasoffers"
+  s.homepage    = "https://github.com/tstmedia/hasoffers"
   s.summary     = %q{Implementation of the HasOffers API for affiliate advertising.}
   s.description = %q{Implementation of the HasOffers API for affiliate advertising.}
 
