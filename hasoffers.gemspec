@@ -18,4 +18,7 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  s.add_dependency 'crack'
+  s.add_dependency 'yajl-ruby'
+  s.add_development_dependency 'rake'
 end
