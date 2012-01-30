@@ -10,23 +10,22 @@ class AffiliateBillingTest < Test::Unit::TestCase
   def test_find_all_invoices
     response = HasOffers::AffiliateBilling.find_all_invoices({})
     assert_success response
-    assert response.data.length > 0, "No invoices were returned."
+    assert response.data.compact.length > 0, "No invoices were returned."
   end
 
   def test_find_all_invoices_filtered_by_affiliate
     response = HasOffers::AffiliateBilling.find_all_invoices(
-      'filters' => ['AffiliateInvoice.affiliate_id' => '7'],
+      'filters' => ['AffiliateInvoice.affiliate_id' => '1'],
       'fields' => ['is_paid', 'impressions', 'clicks', 'conversions', 'amount']
     )
     assert_success response
-    assert response.data.length > 0, "No invoices were returned."
+    assert response.data.compact.length > 0, "No invoices were returned."
   end
 
   def test_find_all_invoices_by_ids
-    response = HasOffers::AffiliateBilling.find_all_invoices_by_ids([7,11]
-    )
+    response = HasOffers::AffiliateBilling.find_all_invoices_by_ids([7,11])
     assert_success response
-    assert response.data.length > 0, "No invoices were returned."
+    assert response.data.compact.length > 0, "No invoices were returned."
   end
 
   def good_params

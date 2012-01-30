@@ -12,7 +12,9 @@ class ConversionTest < Test::Unit::TestCase
   end
 
   def test_update
-    response = HasOffers::Conversion.update(1, {'affiliate_id' => '1', 'offer_id' => '1', 'payout' => '11.50', 'revenue' => '6.75'})
+    response = HasOffers::Conversion.create(good_params)
+    assert_success response
+    response = HasOffers::Conversion.update(response.data, {'payout' => '11.50', 'revenue' => '6.75'})
     assert_success response
   end
 
