@@ -11,14 +11,22 @@ module HasOffers
         get_request(Target, 'findInvoiceStats', params)
       end
 
+      def simplify_response_data data
+        # Data is returned as a hash like this:
+        # {
+        #   "1" => {"AffiliateInvoice" => {<what we really want>}, ... },
+        #   "2" => {"AffiliateInvoice" => {<what we really want>}, ... }
+        # }
+        #
+        # This function will extract it out.
+        data.map { |id, invoice_data| invoice_data["AffiliateInvoice"] }
+      end
+
       def find_all_invoices(params)
         response = get_request(Target, 'findAllInvoices', params)
         if response.success?
           # strip out the clutter
-          data = response.data.map do |invoice|
-            invoice[1].values.first
-          end
-          response.set_data data
+          response.set_data simplify_response_data(response.data)
         end
         response
       end
@@ -28,10 +36,7 @@ module HasOffers
         response = get_request(Target, 'findAllInvoicesByIds', params)
         if response.success?
           # strip out the clutter
-          data = response.data.map do |invoice|
-            invoice[1].values.first
-          end
-          response.set_data data
+          response.set_data simplify_response_data(response.data)
         end
         response
       end
