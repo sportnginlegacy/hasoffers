@@ -3,11 +3,19 @@ module HasOffers
 
   class Base
 
-    BaseUri = 'https://api.hasoffers.com/Api'
+    @@base_uri = 'https://api.hasoffers.com/Api'
     @@api_mode = ((defined?(Rails) and Rails.env.production?) or ENV['HAS_OFFERS_LIVE'] == '1') ? :live : :test
     @@default_params = nil
 
     class << self
+
+      def base_uri=(uri)
+        @@base_uri = uri
+      end
+
+      def base_uri
+        @@base_uri
+      end
 
       def initialize_credentials
         config_file = ENV['HAS_OFFERS_CONFIG_FILE'] || "config/has_offers.yml"
@@ -77,12 +85,12 @@ module HasOffers
         data = build_request_params(target, method, params)
         if live?
           if http_method == :post
-            uri = URI.parse BaseUri
+            uri = URI.parse base_uri
             http = new_http uri
             raw_request = Net::HTTP::Post.new(uri.request_uri)
             raw_request.body = query_string data
           else # assume get
-            uri = URI.parse("#{BaseUri}?#{query_string(data)}")
+            uri = URI.parse("#{base_uri}?#{query_string(data)}")
             http = new_http uri
             raw_request = Net::HTTP::Get.new(uri.request_uri)
           end
