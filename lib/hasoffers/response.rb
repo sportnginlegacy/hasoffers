@@ -57,8 +57,10 @@ module HasOffers
     def error_messages
       if data.is_a? Hash and data["errors"] and data["errors"]["error"]
         data["errors"]["error"].map { |error| error["err_msg"] }
-      elsif @body["response"]["errors"]
+      elsif @body["response"]["errors"] and !@body["response"]["errors"].empty?
         @body["response"]["errors"].map { |error| error["err_msg"] }
+      elsif data.is_a? Hash and data["error_name"] and data["private_message"]
+        [data["private_message"]]
       else
         []
       end
