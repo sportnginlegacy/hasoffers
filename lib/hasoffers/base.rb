@@ -78,7 +78,7 @@ module HasOffers
       def query_string(data_hash)
         # Rails to_params adds an extra open close brackets to multi-dimensional array parameters which
         # hasoffers doesn't like, so the gsub here takes care of that.
-        data_hash.to_params.gsub(/\[\]\[/,'[')
+        data_hash.to_param.gsub(/\[\]\[/,'[')
       end
 
       def make_request(http_method, target, method, params)
