@@ -1,7 +1,5 @@
 module HasOffers
-
   class Response
-
     attr_reader :test, :body, :http_status_code, :http_message, :http_headers
 
     def success?
@@ -56,9 +54,9 @@ module HasOffers
 
     def error_messages
       if data.is_a? Hash and data["errors"] and data["errors"]["error"]
-        data["errors"]["error"].map { |error| error["err_msg"] }
+        data["errors"]["error"].map { |error| error["err_msg"] || error["publicMessage"] }
       elsif @body["response"]["errors"]
-        @body["response"]["errors"].map { |error| error["err_msg"] }
+        @body["response"]["errors"].map { |error| error["err_msg"] || error["publicMessage"] }
       else
         []
       end
@@ -82,7 +80,5 @@ module HasOffers
     def paginated_response?
       @body['response']['data'] and @body['response']['data'].is_a?(Hash) and @body['response']['data'].has_key?('pageCount')
     end
-
   end
-
 end
