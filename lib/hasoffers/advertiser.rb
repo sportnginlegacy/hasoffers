@@ -7,7 +7,7 @@ module HasOffers
     class << self
 
       def find_all(params = {})
-        get_request(Target, 'findAll', params)
+        post_request(Target, 'findAll', params)
       end
 
       def create(data, return_object = false)

@@ -6,9 +6,12 @@ module HasOffers
 
     class << self
 
+      # Jon Phenow @ 06/13/12
+      # Switched this to use POST because of some weird issues with sending
+      # from behind a proxy
       def get_stats(params)
         requires!(params, %w[fields])
-        response = get_request(Target, 'getStats', params)
+        response = post_request(Target, 'getStats', params)
         if response.success?
           # strip out the 'Stat' keys which is just extra clutter
           data = response.data.map do |stat|
@@ -19,8 +22,11 @@ module HasOffers
         response
       end
 
+      # Jon Phenow @ 06/13/12
+      # Switched this to use POST because of some weird issues with sending
+      # from behind a proxy
       def get_conversions(params)
-        response = get_request(Target, 'getConversions', params)
+        response = post_request(Target, 'getConversions', params)
         if response.success?
           # strip out the 'Stat' keys which is just extra clutter
           data = response.data.map do |stat|
