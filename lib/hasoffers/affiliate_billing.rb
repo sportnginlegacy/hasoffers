@@ -6,9 +6,12 @@ module HasOffers
 
     class << self
 
+      # Jon Phenow @ 06/13/12
+      # Switched this to use POST because of some weird issues with sending
+      # from behind a proxy
       def find_invoice_stats(params)
         requires!(params, %w[affiliate_id end_date])
-        get_request(Target, 'findInvoiceStats', params)
+        post_request(Target, 'findInvoiceStats', params)
       end
 
       def simplify_response_data data
@@ -22,8 +25,11 @@ module HasOffers
         data.map { |id, invoice_data| invoice_data["AffiliateInvoice"] }
       end
 
+      # Jon Phenow @ 06/13/12
+      # Switched this to use POST because of some weird issues with sending
+      # from behind a proxy
       def find_all_invoices(params)
-        response = get_request(Target, 'findAllInvoices', params)
+        response = post_request(Target, 'findAllInvoices', params)
         if response.success?
           # strip out the clutter
           response.set_data simplify_response_data(response.data)
@@ -31,9 +37,12 @@ module HasOffers
         response
       end
 
+      # Jon Phenow @ 06/13/12
+      # Switched this to use POST because of some weird issues with sending
+      # from behind a proxy
       def find_all_invoices_by_ids(ids, params = {})
         params['ids'] = ids
-        response = get_request(Target, 'findAllInvoicesByIds', params)
+        response = post_request(Target, 'findAllInvoicesByIds', params)
         if response.success?
           # strip out the clutter
           response.set_data simplify_response_data(response.data)
