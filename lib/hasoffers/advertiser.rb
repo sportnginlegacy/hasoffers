@@ -11,7 +11,7 @@ module HasOffers
       end
 
       def create(data, return_object = false)
-        requires!(data, %w[company address1 city country zipcode phone])
+        requires!(data, %w[company address1 city country zipcode phone region])
         params = build_data(data, return_object)
         post_request(Target, 'create', params)
       end

@@ -1,3 +1,9 @@
+== Version 0.1.8
+* Advertiser also requires region parameter when creating
+
+== Version 0.1.7
+* Implementation of the HasOffers API for affiliate advertising
+
 == Version 0.1.6
 * Fix issues with error hash on Response object
 * Fix issues that occur when sending GET requests over a proxy, switched
