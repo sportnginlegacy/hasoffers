@@ -10,10 +10,11 @@ class AdvertiserTest < Test::Unit::TestCase
   def good_params
     { 'company' => 'Dominoes',
       'address1' => '100 1st St.',
-      'city' => 'Minneapolis', 
+      'city' => 'Minneapolis',
       'country' => 'USA',
       'zipcode' => '55413',
-      'phone' => '123-123-1234' }
+      'phone' => '123-123-1234',
+      'region' => 'WA'}
   end
 
   def test_create
