@@ -1,3 +1,6 @@
+== Version 0.1.11
+* Add OfferPixel method: findAll
+
 == Version 0.1.10
 * Add OfferPixel as an API target. OfferPixel: create, update.
 

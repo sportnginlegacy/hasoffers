@@ -18,8 +18,26 @@ module HasOffers
         post_request(Target, 'update', params)
       end
 
+      def simplify_response_data data
+        # Data is returned as a hash like this:
+        # {
+        #   "1" => {"OfferPixel" => {<what we really want>}, ... },
+        #   "2" => {"OfferPixel" => {<what we really want>}, ... }
+        # }
+        #
+        # This function will extract it out.
+        data.map { |id, offer_pixel_data| offer_pixel_data["OfferPixel"] }
+      end
+
+      def find_all(params)
+        response = post_request(Target, 'findAll', params)
+        if response.success?
+          # strip out the clutter
+          response.set_data simplify_response_data(response.data)
+        end
+        response
+      end
     end
-    
   end
   
 end

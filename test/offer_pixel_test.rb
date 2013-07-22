@@ -22,4 +22,15 @@ class OfferPixelTest < Test::Unit::TestCase
     assert_success response
   end
 
+  def test_find_all
+    response = HasOffers::OfferPixel.find_all({})
+    assert_success response
+    assert_equal(response.body['response']['status'], 1)
+    assert_equal(response.body['response']['data']['1']['OfferPixel'], {"id"=>"1", "affiliate_id"=>2, "offer_id"=>1, "code"=>"<div id=\"pixel_code_1\" style=\"white-space:pre;><p><img src=\"http://my-example-pixel.com\" /></p></div>", "status"=>"active", "type"=>"image"})
+    assert response.data.compact.length > 0, "No invoices were returned."
+  end
+
+
+
+
 end
