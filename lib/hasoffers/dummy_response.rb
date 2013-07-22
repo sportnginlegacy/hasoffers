@@ -26,6 +26,10 @@ module HasOffers
         {"response" => { "status" => 1, "data" => true, "errors" => [] } }
       end
 
+      def response_for_offerpixel_findall(params)
+        {"response" => { "status" => 1, "data" => {"1" => {"OfferPixel" => {"id" => "1", "affiliate_id" => 2, "offer_id" => 1, "code" => "<div id=\"pixel_code_1\" style=\"white-space:pre;><p><img src=\"http://my-example-pixel.com\" /></p></div>", "status" => "active", "type" => "image"}}}, "errors" => {} } }
+      end
+
       def response_for_offerurl_create(params)
         {"response" => { "status" => 1, "data" => rand(1_000_000).to_s, "errors" => [] } }
       end
