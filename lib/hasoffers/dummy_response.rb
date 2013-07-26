@@ -18,6 +18,10 @@ module HasOffers
         {"response" => { "status" => 1, "data" => true, "errors" => [] } }
       end
 
+      def response_for_offer_generatetrackinglink(params)
+        {"response" => { "status" => 1, "data" => { "affiliate_id" => params["affiliate_id"], "offer_id" => params["offer_id"], "click_url" => "http://tracker.ifeelgoods.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}", "impression_pixel" => "<img src=\"http://tracker.ifeelgoods.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}\" width=\"1\" height=\"1\" />" }, "errors" => [] } }
+      end
+
       def response_for_offerpixel_create(params)
         {"response" => { "status" => 1, "data" => rand(1_000_000).to_s, "errors" => [] } }
       end
