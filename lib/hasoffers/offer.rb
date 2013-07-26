@@ -18,6 +18,9 @@ module HasOffers
         post_request(Target, 'update', params)
       end
 
+      def generate_tracking_link(id, affiliate_id, params = {}, options = {})
+        post_request(Target, 'generateTrackingLink', { 'offer_id' => id, 'affiliate_id' => affiliate_id, 'params' => params, 'options' => options })
+      end
     end
     
   end
