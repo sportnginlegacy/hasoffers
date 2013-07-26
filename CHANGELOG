@@ -1,3 +1,6 @@
+== Version 0.1.12
+* Add Offer method: generateTrackingLink
+
 == Version 0.1.11
 * Add OfferPixel method: findAll
 
