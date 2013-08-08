@@ -19,7 +19,7 @@ module HasOffers
       end
 
       def response_for_offer_generatetrackinglink(params)
-        {"response" => { "status" => 1, "data" => { "affiliate_id" => params["affiliate_id"], "offer_id" => params["offer_id"], "click_url" => "http://tracker.ifeelgoods.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}", "impression_pixel" => "<img src=\"http://tracker.ifeelgoods.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}\" width=\"1\" height=\"1\" />" }, "errors" => [] } }
+        {"response" => { "status" => 1, "data" => { "affiliate_id" => params["affiliate_id"], "offer_id" => params["offer_id"], "click_url" => "http://my-example-pixel.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}", "impression_pixel" => "<img src=\"http://my-example-pixel.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}\" width=\"1\" height=\"1\" />" }, "errors" => [] } }
       end
 
       def response_for_goal_create(params)
