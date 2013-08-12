@@ -22,6 +22,10 @@ module HasOffers
         {"response" => { "status" => 1, "data" => { "affiliate_id" => params["affiliate_id"], "offer_id" => params["offer_id"], "click_url" => "http://my-example-pixel.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}", "impression_pixel" => "<img src=\"http://my-example-pixel.com/aff_c?offer_id=#{params["offer_id"]}&aff_id=#{params["affiliate_id"]}&#{params["params"].to_query}\" width=\"1\" height=\"1\" />" }, "errors" => [] } }
       end
 
+      def response_for_offer_generatetrackingpixel(params)
+        {"response" => { "status" => 1, "data" => { "test_click_url" => "http://my-example-pixel.com/aff_c?offer_id=#{params["offer_id"]}&source=testoffer&aff_sub=testoffer", "code" => "<!-- Offer Conversion: --> <iframe src=\"https://my-example-pixel.com/XXXX\" scrolling=\"no\" frameborder=\"0\" width=\"1\" height=\"1\"></iframe> <!-- // End Offer Conversion -->", "url" => "https://my-example-pixel.com/XXXX", "domain" => "https://my-example-pixel.com" }, "errors" => [] } }
+      end
+
       def response_for_goal_create(params)
         {"response" => { "status" => 1, "data" => rand(1_000_000).to_s, "errors" => [] } }
       end
