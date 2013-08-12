@@ -19,7 +19,7 @@ module HasOffers
       end
 
       def generate_tracking(id)
-        get_request(Target, 'generateTracking', { 'goal_id' => id })
+        post_request(Target, 'generateTracking', { 'goal_id' => id })
       end
     end
 
