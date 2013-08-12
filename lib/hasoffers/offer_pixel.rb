@@ -30,7 +30,7 @@ module HasOffers
       end
 
       def find_all(params)
-        response = post_request(Target, 'findAll', params)
+        response = get_request(Target, 'findAll', params)
         if response.success?
           # strip out the clutter
           response.set_data simplify_response_data(response.data)
