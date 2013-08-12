@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hasoffers (0.1.12)
+    hasoffers (0.1.13)
       crack
       yajl-ruby
 
