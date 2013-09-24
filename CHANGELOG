@@ -1,3 +1,6 @@
+== Version 0.1.14
+* Add Affiliate method: find_all
+
 == Version 0.1.12
 * Add Offer method: generateTrackingLink
 
