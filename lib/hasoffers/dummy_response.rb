@@ -58,6 +58,10 @@ module HasOffers
         {"response" => { "status" => 1, "data" => true, "errors" => [] } }
       end
 
+      def response_for_affiliate_findall(params)
+        { "response" => { "status" => 1, "data" => { "6" => { "Affiliate" => { "id" => "6", "source_brand_id" => "10", "company" => "AdappSolutions", "address1" => "2200 Western Ave", "address2" => "",  "city" => "Seattle", "region" => "WA", "country" => "US", "other" => nil, "zipcode" => "98121", "phone" => "2065081318", "fax" => "", "website" => nil, "date_added" => "2009-11-1816:17:18", "modified" => 1271216343, "signup_ip" => "173.10.106.174", "status" => "pending", "wants_alerts" => "1", "account_manager_id" => nil, "network_map_id" => nil, "payment_method" => "check", "payment_terms" => "net30", "w9_filed" => "0", "referral_id" => nil, "affiliate_tier_id" => nil, "fraud_activity_score" => nil, "fraud_profile_score" => "20", "fraud_activity_alert_threshold" => nil, "fraud_activity_block_threshold" => nil, "fraud_profile_alert_threshold" => nil, "fraud_profile_block_threshold" => nil, "account_id" => "75809" } } }, "errors" => [] } }
+      end
+
       def response_for_affiliate_create(params)
         {"response" => { "status" => 1, "data" => rand(1_000_000).to_s } }
       end
