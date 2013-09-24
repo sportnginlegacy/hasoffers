@@ -6,6 +6,10 @@ module HasOffers
 
     class << self
 
+      def find_all(params = {})
+        post_request(Target, 'findAll', params)
+      end
+
       def create(data, return_object = false)
         requires!(data, %w[company address1 city country zipcode phone])
         if data['country'] == 'US' or data['country'] == 'CA'
