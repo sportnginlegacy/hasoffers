@@ -46,6 +46,8 @@ Does not make live API calls. Dummy responses are returned by the DummyResponse 
 * env HAS_OFFERS_LIVE=1 rake test
 Makes live api calls. Uses the HasOffer credentials in config/has_offers.yml which by default is set to the demo account credentials. HasOffers does not supply a test gateway so be careful to not run these tests against your live HasOffers account.
 
+Make sure your IP is white-listed for live API calls:
+http://ifg.hasoffers.com/admin/support/api
 
 == Contributing
 
