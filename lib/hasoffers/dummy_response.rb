@@ -53,13 +53,19 @@ module HasOffers
       def response_for_offerurl_create(params)
         {"response" => { "status" => 1, "data" => rand(1_000_000).to_s, "errors" => [] } }
       end
- 
+
       def response_for_offerurl_update(params)
         {"response" => { "status" => 1, "data" => true, "errors" => [] } }
       end
 
       def response_for_affiliate_findall(params)
-        { "response" => { "status" => 1, "data" => { "6" => { "Affiliate" => { "id" => "6", "source_brand_id" => "10", "company" => "AdappSolutions", "address1" => "2200 Western Ave", "address2" => "",  "city" => "Seattle", "region" => "WA", "country" => "US", "other" => nil, "zipcode" => "98121", "phone" => "2065081318", "fax" => "", "website" => nil, "date_added" => "2009-11-1816:17:18", "modified" => 1271216343, "signup_ip" => "173.10.106.174", "status" => "pending", "wants_alerts" => "1", "account_manager_id" => nil, "network_map_id" => nil, "payment_method" => "check", "payment_terms" => "net30", "w9_filed" => "0", "referral_id" => nil, "affiliate_tier_id" => nil, "fraud_activity_score" => nil, "fraud_profile_score" => "20", "fraud_activity_alert_threshold" => nil, "fraud_activity_block_threshold" => nil, "fraud_profile_alert_threshold" => nil, "fraud_profile_block_threshold" => nil, "account_id" => "75809" } } }, "errors" => [] } }
+        {
+          "response"=>{"status"=>1, "data"=> {
+            "6"=>{"Affiliate"=>{"id"=>"6", "source_brand_id"=>"10", "company"=>"AdappSolutions", "address1"=>"2200 Western Ave", "address2"=>"", "city"=>"Seattle", "region"=>"WA", "country"=>"US", "other"=>nil, "zipcode"=>"98121", "phone"=>"2065081318", "fax"=>"", "website"=>nil, "date_added"=>"2009-11-18 16:17:18", "modified"=>1271216343, "signup_ip"=>"173.10.106.174", "status"=>"pending", "wants_alerts"=>"1", "account_manager_id"=>nil, "network_map_id"=>nil, "payment_method"=>"check", "payment_terms"=>"net 30", "w9_filed"=>"0", "referral_id"=>nil, "affiliate_tier_id"=>nil, "fraud_activity_score"=>nil, "fraud_profile_score"=>"20", "fraud_activity_alert_threshold"=>nil, "fraud_activity_block_threshold"=>nil, "fraud_profile_alert_threshold"=>nil, "fraud_profile_block_threshold"=>nil, "account_id"=>"75809"}},
+            "16"=>{"Affiliate"=>{"id"=>"16", "source_brand_id"=>"10", "company"=>"X", "address1"=>"Xavier Institute", "address2"=>"", "city"=>"Westchester County", "region"=>"NY", "country"=>"US", "other"=>nil, "zipcode"=>"10550", "phone"=>"9145551212", "fax"=>nil, "website"=>nil, "date_added"=>"2010-05-20 19:18:42", "modified"=>1274397810, "signup_ip"=>"10.1.1.74", "status"=>"active", "wants_alerts"=>"1", "account_manager_id"=>"3", "network_map_id"=>nil, "payment_method"=>"check", "payment_terms"=>"net 30", "w9_filed"=>"0", "referral_id"=>nil, "affiliate_tier_id"=>nil, "fraud_activity_score"=>nil, "fraud_profile_score"=>"27", "fraud_activity_alert_threshold"=>nil, "fraud_activity_block_threshold"=>nil, "fraud_profile_alert_threshold"=>nil, "fraud_profile_block_threshold"=>nil, "account_id"=>"79876"}}
+          },
+          "errors"=>[]}
+        }
       end
 
       def response_for_affiliate_create(params)
