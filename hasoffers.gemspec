@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/sportngin/hasoffers"
   s.summary     = %q{Implementation of the HasOffers API for affiliate advertising.}
   s.description = %q{Implementation of the HasOffers API for affiliate advertising.}
+  s.license     = "MIT"
 
   s.rubyforge_project = "hasoffers"
 
