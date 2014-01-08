@@ -18,8 +18,8 @@ module HasOffers
         post_request(Target, 'update', params)
       end
 
-      def generate_tracking(id)
-        post_request(Target, 'generateTracking', { 'goal_id' => id })
+      def generate_tracking(id, params = {}, options = {})
+        post_request(Target, 'generateTracking', { 'goal_id' => id, 'params' => params, 'options' => options })
       end
     end
 
