@@ -1,3 +1,6 @@
+== Version 0.1.16
+* Add params and options in Goal: generateTracking
+
 == Version 0.1.15
 * Updated dummy responses for Affiliate#find_all
 
