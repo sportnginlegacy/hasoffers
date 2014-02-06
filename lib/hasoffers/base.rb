@@ -1,14 +1,10 @@
-
 module HasOffers
-
   class Base
-
     @@base_uri = 'https://api.hasoffers.com/Api'
     @@api_mode = ((defined?(Rails) and Rails.env.production?) or ENV['HAS_OFFERS_LIVE'] == '1') ? :live : :test
     @@default_params = nil
 
     class << self
-
       def base_uri=(uri)
         @@base_uri = uri
       end
@@ -78,7 +74,7 @@ module HasOffers
       def query_string(data_hash)
         # Rails to_params adds an extra open close brackets to multi-dimensional array parameters which
         # hasoffers doesn't like, so the gsub here takes care of that.
-        data_hash.to_param.gsub(/\[\]\[/,'[')
+        URI.escape(URI.unescape(data_hash.to_param).gsub(/\[\]\[/,'['))
       end
 
       def make_request(http_method, target, method, params)
@@ -111,9 +107,6 @@ module HasOffers
       def build_data(data, return_object = false)
         {'data' => data, 'return_object' => return_object}
       end
-
     end
-
   end
-
 end
