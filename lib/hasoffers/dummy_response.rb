@@ -39,7 +39,21 @@ module HasOffers
       end
 
       def response_for_offerpixel_create(params)
-        {"response" => { "status" => 1, "data" => rand(1_000_000).to_s, "errors" => [] } }
+        if params["return_object"]
+          {
+            "response" => {
+              "status" => 1,
+              "errors" => [],
+              "data" => {
+                "OfferPixel" => {
+                  "id" => rand(1_000_000).to_s
+                }
+              }
+            }
+          }
+        else
+          {"response" => { "status" => 1, "data" => rand(1_000_000).to_s, "errors" => [] } }
+        end
       end
 
       def response_for_offerpixel_update(params)

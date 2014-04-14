@@ -15,6 +15,12 @@ class OfferPixelTest < Test::Unit::TestCase
   def test_create
     response = HasOffers::OfferPixel.create(good_params)
     assert_success response
+    assert ! response.body['response']['data'].empty?
+  end
+
+  def test_create_and_return_object
+    response = HasOffers::OfferPixel.create(good_params, true)
+    assert ! response.body['response']['data']['OfferPixel']['id'].empty?
   end
 
   def test_update
