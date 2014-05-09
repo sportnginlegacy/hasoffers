@@ -1,3 +1,9 @@
+== Version 0.1.9
+* Fix adding errors in has_offers_model that supports Rails 3.2 and above
+
+== Version 0.1.8
+* Unescape query string before gsubbing
+
 == Version 0.1.6
 * Fix issues with error hash on Response object
 * Fix issues that occur when sending GET requests over a proxy, switched
