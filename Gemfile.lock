@@ -1,8 +1,7 @@
 PATH
   remote: .
   specs:
-    hasoffers (0.1.9)
-      activemodel (~> 3.2)
+    hasoffers (0.1.10)
       crack
       yajl-ruby
 
@@ -28,5 +27,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel (~> 3.2)
   hasoffers!
   rake
