@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.add_dependency 'crack'
   s.add_dependency 'yajl-ruby'
-  s.add_dependency 'activemodel', '~> 3.2'
+  s.add_development_dependency 'activemodel', '~> 3.2'
   s.add_development_dependency 'rake'
 end
