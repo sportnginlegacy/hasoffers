@@ -40,16 +40,21 @@ module HasOffersModel
         define_method("check_for_errors") do |response|
           unless response.success?
             response.error_messages.each do |error_message|
-              self.errors.add_to_base "HasOffers API Error: #{error_message}" 
+              new_error_message = "HasOffers API Error: #{error_message}"
+              if self.errors.respond_to?(:add_to_base)
+                self.errors.add_to_base new_error_message
+              else
+                self.errors.add :base, new_error_message
+              end
             end
           end
           response.success?
         end
 
       end
-    
+
     end
-    
+
   end
-  
+
 end
