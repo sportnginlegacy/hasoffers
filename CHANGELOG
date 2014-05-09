@@ -1,3 +1,6 @@
+== Version 0.1.10
+* Move ActiveModel to be a dev dependancy
+
 == Version 0.1.9
 * Fix adding errors in has_offers_model that supports Rails 3.2 and above
 
