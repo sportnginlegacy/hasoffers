@@ -73,6 +73,22 @@ module HasOffers
       def response_for_report_getconversions(params)
         {"response"=>{"data"=>{"pageCount"=>1, "data"=>[{"Stat"=>{"affiliate_id"=>"1", "payout"=>"100.00"}}], "current"=>50, "count"=>1, "page"=>1}, "errors"=>[], "status"=>1}}
       end
+      
+      def response_for_rawlog_listdatedirs(params)
+        {"response"=>{"data"=>{"logType"=>"clicks","dateDirs"=>[{"displayName"=>"Sep 30, 2014","dirName"=>"20140930"}]}, "errors"=>[], "status"=>1}}
+      end
+      
+      def response_for_rawlog_listlogs(params)
+        {"response"=>{"data"=>{"logType"=>"clicks","logDate"=>"20140930","logFiles"=>[{"displayName"=>"Sep 30, 2014 - 04:00 am","filename"=>"20140930/clicks-1412049600-a9wyK9.zip","startTimestamp"=>"1412049600"}]}, "errors"=>[], "status"=>1}}
+      end
+      
+      def response_for_rawlog_getdownloadlink(params)
+        {"response"=>{"data"=>{"link"=>"https://s3.amazonaws.com/ho-adserverlogs-prod/qproc/raw-logs/clicks/xxxx/20140930/clicks-1412049600-a9wyK9.zip?AWSAccessKeyId=xxxx&Expires=1412085172&Signature=xxxx"}, "errors"=>[], "status"=>1}}
+      end
+      
+      def response_for_rawlog_getlogexpirations(params)
+        {"response"=>{"data"=>{"logExpireInDays"=>{"conversions"=>"180","clicks"=>"180","impressions"=>"1"}}, "errors"=>[], "status"=>1}}
+      end
 
     end
 
