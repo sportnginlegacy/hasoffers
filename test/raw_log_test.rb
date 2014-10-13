@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/test_helper'
 
-class OfferTest < Test::Unit::TestCase
+class RawLogTest < Test::Unit::TestCase
   
   def test_listDateDirs
     response = HasOffers::RawLog.listDateDirs('log_type' => "clicks")
