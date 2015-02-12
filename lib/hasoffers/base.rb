@@ -13,19 +13,15 @@ module HasOffers
         @@base_uri
       end
 
-      def initialize_credentials
+      def initialize_credentials(config={})
         config_file = ENV['HAS_OFFERS_CONFIG_FILE'] || "config/has_offers.yml"
-        if File.exists?(config_file)
-          config = YAML::load(IO.read(config_file))
-          @@default_params = {'Format' => 'json',
-                              'Service' => 'HasOffers',
-                              'Version' => '2',
-                              'NetworkId' => config['network_id'],
-                              'NetworkToken' => config['api_key']}
-        else
-          @@default_params = {}
-          puts "Missing config/has_offers.yml file!"
-        end
+        config.merge!YAML::load(IO.read(config_file)) if File.exists?(config_file)
+
+        @@default_params = {'Format' => 'json',
+                            'Service' => 'HasOffers',
+                            'Version' => '2',
+                            'NetworkId' => config['network_id'],
+                            'NetworkToken' => config['api_key']}
       end
 
       def test?
