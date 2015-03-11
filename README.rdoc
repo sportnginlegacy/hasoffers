@@ -1,5 +1,7 @@
 == HasOffers
 
+{<img src="https://travis-ci.org/sportngin/hasoffers.svg" alt="Build Status" />}[https://travis-ci.org/sportngin/hasoffers]
+
 This gem hooks into the HasOffers API as documented here: http://www.hasoffers.com/wiki/Category:API
 
 
