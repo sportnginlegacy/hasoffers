@@ -60,4 +60,4 @@ Makes live api calls. Uses the HasOffer credentials in `config/has_offers.yml` w
 
 # Contributing
 
-This repository is no longer actively supported. We recommend forking for contiuing work.
+This repository is no longer actively supported. We recommend forking for continuing work.
