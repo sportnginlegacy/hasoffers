@@ -49,8 +49,7 @@ end
 The tests can be ran in two modes:
 
 ## Test mode
-* rake test
-Does not make live API calls. Dummy responses are returned by the DummyResponse class which is also used in development mode to avoid live API calls.
+`rake test` Does not make live API calls. Dummy responses are returned by the DummyResponse class which is also used in development mode to avoid live API calls.
 
 ## Live mode
 ```bash
@@ -61,4 +60,4 @@ Makes live api calls. Uses the HasOffer credentials in `config/has_offers.yml` w
 
 # Contributing
 
-The HasOffers API is huge and this gem implements only a portion of what is available with their API. With this framework in place it should be easy to extend the gem for API calls that are not yet supported. Please send contributions as git patches to luke.ludwig@tstmedia.com, or alternatively create a fork and send a git pull request via github.   
+This repository is no longer actively supported. We recommend forking for contiuing work.
